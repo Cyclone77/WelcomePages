@@ -27,8 +27,8 @@
             text-decoration: none;
         }
 
-
-		#container {
+        #container
+        {
 			background-color: rgba(0,0,0,0.3);
 			border-radius: 1.5em;
 			color: #fefefe;
@@ -43,7 +43,8 @@
 			width: 540px;
 			margin: auto;
 			font-weight: bold;
-		}
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -51,7 +52,7 @@
         <div id="container-inner">
             <div id="header">
                 <div id="header-inner">
-                    <div id="header-content" onclick="backgroundImage();return false;">
+                    <div id="header-content" onclick="return false;">
                         <h1>Cyclone77's Blog</h1>
                         <p>If you really want something, you have to be prepared to work very hard, take advantage of opportunity, and above all never give up.</p>
                     </div>
@@ -105,7 +106,8 @@
                     transition: "swirlRight2"
                 }],
                 walk: function (s, e) {
-                    $(".vegas-timer-progress").css("background-Color", e.color)
+                    $(".vegas-timer-progress").css("background-Color", e.color);
+                    $("#container").show();
                 }
             });
         });
