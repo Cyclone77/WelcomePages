@@ -5,12 +5,16 @@
     <title></title>
     <link href="src/vegas.css" rel="stylesheet" />
     <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+
         html
         {
             width: 100%;
             height: 100%;
-            margin: 0;
-            padding: 0;
         }
 
         body
@@ -18,33 +22,45 @@
             margin: 0;
             padding: 0;
             width: 100%;
-            height: 100%;            
+            height: 100%;
             color: #FFF;
         }
+
         a
-        {            
+        {
             color: #FFF;
             text-decoration: none;
         }
 
         #container
         {
-			background-color: rgba(0,0,0,0.3);
-			border-radius: 1.5em;
-			color: #fefefe;
-			overflow: auto;
-			position: absolute;
-			right: 100px;
-			top: 0px;
-			bottom: 100px;
-			width: auto;
-			height: auto;
-			max-height: 270px;
-			width: 540px;
-			margin: auto;
-			font-weight: bold;
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 1.5em;
+            color: #fefefe;
+            overflow: auto;
+            position: absolute;
+            right: 100px;
+            top: 0px;
+            bottom: 100px;
+            width: auto;
+            height: auto;
+            max-height: 270px;
+            width: 540px;
+            margin: auto;
             display: none;
+            font-family: Monaco, "Microsoft YaHei", 'MonacoRegular', 'Courier New', monospace !important;
         }
+
+        #header
+        {
+            padding: 10px;
+            border-bottom: 1px solid #fff;
+        }
+
+            #header p
+            {
+                font-size: 12px;
+            }
     </style>
 </head>
 <body>
@@ -53,15 +69,21 @@
             <div id="header">
                 <div id="header-inner">
                     <div id="header-content" onclick="return false;">
-                        <h1>Cyclone77's Blog</h1>
+                        <a href="http://20px.cn/home/">
+                            <h1>Cyclone77's Blog</h1>
+                        </a>
                         <p>If you really want something, you have to be prepared to work very hard, take advantage of opportunity, and above all never give up.</p>
                     </div>
                 </div>
             </div>
 
             <div id="content">
-                <a href="http://20px.cn/">主页</a>
-                <a href="http://20px.cn/blog/">博客</a>
+                <ul>
+                    <li><a href="http://20px.cn/home/">主页</a></li>
+                </ul>
+                <ul>
+                    <li><a href="http://20px.cn/blog/">博客</a></li>
+                </ul>
             </div>
 
             <div id="footer"></div>
