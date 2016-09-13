@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="src/vegas.css" rel="stylesheet" />
+    <style>
+        html
+        {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body
+        {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;            
+            color: #FFF;
+        }
+        a
+        {            
+            color: #FFF;
+            text-decoration: none;
+        }
+
+        #container
+        {
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 1.5em;
+            color: #fefefe;
+            overflow: auto;
+            position: absolute;
+            left: 50%;
+            top: 0px;
+            bottom: 0px;
+            width: auto;
+            height: auto;
+            max-height: 270px;
+            width: 630px;
+            margin: auto;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="container-inner">
+            <div id="header">
+                <div id="header-inner">
+                    <div id="header-content" onclick="backgroundImage();return false;">
+                        <h1>Cyclone77's Blog</h1>
+                        <p>If you really want something, you have to be prepared to work very hard, take advantage of opportunity, and above all never give up.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content">
+                <a href="http://20px.cn/">主页</a>
+                <a href="http://20px.cn/blog/">博客</a>
+            </div>
+
+            <div id="footer"></div>
+        </div>
+    </div>
+    <script src="src/jquery.js"></script>
+    <script src="src/vegas.js"></script>
+    <script>
+        $(function () {
+            $('body').vegas({
+                overlay: !0,
+                transitionDuration: 4e3,
+                delay: 1e4,
+                shuffle: true,
+                slides: [{
+                    src: "img/unsplash1.jpg",
+                    color: "#DBC9B3",
+                    transition: "fade2",
+                    transitionDuration: 1e4
+                }, {
+                    src: "img/unsplash3.jpg",
+                    color: "#F6B700",
+                    transition: "zoomOut",
+                    transitionDuration: 8e3
+                }, {
+                    src: "img/unsplash5.jpg",
+                    color: "#EFAF41",
+                    animation: "random"
+                }, {
+                    src: "img/unsplash4.jpg",
+                    color: "#CBC2B9",
+                    animation: "kenburns",
+                    transition: "swirlLeft2"
+                }, {
+                    src: "img/unsplash6.jpg",
+                    color: "#B89E2F",
+                    animation: "random"
+                }, {
+                    src: "img/unsplash7.jpg",
+                    color: "#7BBBBB",
+                    animation: "random",
+                    transition: "swirlRight2"
+                }],
+                walk: function (s, e) {
+                    $(".vegas-timer-progress").css("background-Color", e.color)
+                }
+            });
+        });
+    </script>
+</body>
+</html>
