@@ -49,17 +49,41 @@
             overflow: auto;
             position: absolute;
             right: 100px;
-            top: 0px;
-            bottom: 100px;
+            top: 50%;
+            bottom: 50%;
             width: auto;
             height: auto;
-            max-height: 240px;
+            height: 240px;
             width: 540px;
             margin: auto;
             font-family: Monaco, "Microsoft YaHei", 'MonacoRegular', 'Courier New', monospace !important;
             border: 2px solid rgba(0,0,0,0.3);
             overflow: hidden;
+            
+            transition: top 1s;
+            -webkit-transition: top 1s; /* Safari */
         }
+
+            #container.Minhide
+            {
+                position: absolute;
+                top: 5px;
+                height: 30px;
+                border-radius: 15px;
+                margin: 0px;
+            }
+
+                #container.Minhide #closeContainer
+                {
+                    position: absolute;
+                    top: 3px;
+                    right: 10px;
+                }
+
+                #container.Minhide #container-inner
+                {
+                    display: none;
+                }
 
         #header
         {
@@ -132,14 +156,17 @@
             background: #fff;
             cursor: pointer;
             float: right;
+            position: absolute;
+            top: 10px;
+            right: 10px;
         }
     </style>
 </head>
 <body>
     <div id="container">
+        <span id="closeContainer">↑↑</span>
         <div id="container-inner">
             <div id="header">
-                <span id="closeContainer">↑↑</span>
                 <div id="header-inner">
                     <div id="header-content" onclick="return false;">
                         <a href="http://20px.cn/home/">
@@ -216,9 +243,15 @@
                     $(".vegas-timer-progress").css("background-Color", e.color);
                 }
             });
-            //$("#closeContainer").trigger("click", function(event){
-            //    this.text = "↓↓";                
-            //});
+            $("#closeContainer").on("click", function (event) {
+                if ($(this).text() == "↓↓") {
+                    $(this).text("↑↑");
+                    $(this).closest("#container").removeClass("Minhide");
+                } else {
+                    $(this).text("↓↓");
+                    $(this).closest("#container").addClass("Minhide");
+                };
+            });
         });
     </script>
 </body>
