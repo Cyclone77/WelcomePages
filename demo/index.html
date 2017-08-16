@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="../src/vegas.css" rel="stylesheet" />
+</head>
+
+<body>
+    <script src="../src/jquery.js"></script>
+    <script src="../src/vegas.js"></script>
+    <script>
+        $(function() {
+            $('body').vegas({
+                overlay: !0,
+                transitionDuration: 4e3,
+                delay: 1e4,
+                shuffle: true,
+                slides: [{
+                    src: "../img/unsplash1.jpg",
+                    color: "#DBC9B3",
+                    transition: "fade2",
+                    transitionDuration: 1e4
+                }, {
+                    src: "../img/unsplash3.jpg",
+                    color: "#F6B700",
+                    transition: "zoomOut",
+                    transitionDuration: 8e3
+                }, {
+                    src: "../img/unsplash5.jpg",
+                    color: "#EFAF41",
+                    animation: "random"
+                }, {
+                    src: "../img/unsplash4.jpg",
+                    color: "#CBC2B9",
+                    animation: "kenburns",
+                    transition: "swirlLeft2"
+                }, {
+                    src: "../img/unsplash6.jpg",
+                    color: "#B89E2F",
+                    animation: "random"
+                }, {
+                    src: "../img/unsplash7.jpg",
+                    color: "#7BBBBB",
+                    animation: "random",
+                    transition: "swirlRight2"
+                }],
+                walk: function(s, e) {
+                    $(".vegas-timer-progress").css("background-Color", e.color);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
